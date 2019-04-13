@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+WELCOME TO OUR SITE
+{% endblock %}
+{% block utility %}
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+{% endblock %}
+{% block content %}
+
+
+{% endblock %}

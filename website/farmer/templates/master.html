@@ -1,0 +1,169 @@
+{% load static %}
+<html>
+<head>
+
+  <title>
+  {% block title %}
+    {% endblock %}
+  </title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+  <script src="{% static 'jquery.min' %}" type="text/javascript"></script>
+  <script src="{% static 'bootstrap.min' %}" type="text/javascript"></script>
+  <style>
+.navbar{
+float:right;
+bottom:40px;
+list-style:none;
+}
+.navbar > li :: hover{
+background:#555;
+color:#555;
+}
+    .nav > li {
+      margin-left: 50px;
+
+    }
+
+    .row.content {height: 450px}
+
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+
+        }
+  </style>
+</head>
+<body>
+
+{% block header %}
+
+  <p class="position-fixed ">FARMING COMMUNITY </p>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{% static 'logo.jpg' %}" class="img-circle" width="100%" height="220">
+    </div>
+        <div class="col-md-6">
+      <img src="{% static 'banner.jpg' %}" width="100%" hieght="">
+    </div>
+        <div class="col-md-3">
+      <img src="{% static 'contact.png' %}" width="100%" height="220">
+    </div>
+  </div>
+
+</div>
+<nav class="jumbotron">
+  <div class="container-fluid">
+
+      <ul class="nav">
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+
+        <li><a href="{% url 'bookcount' %}">book count</a></li>
+        <li><a href="{% url 'bookdeposit' %}">book deposit</a></li>
+        <li><a href="{% url 'bookissue' %}">book issue</a></li>
+       <li><a href="{% url 'createbook' %}">create book</a></li>
+        <li><a href="{% url 'createstudent' %}">create student</a></li>
+        <li><a href="{% url 'deletebook' %}">delete book</a></li>
+       <li><a href="{% url 'deletestudent' %}">delete student</a></li>
+        <li><a href="{% url 'displaybook' %}">show book</a></li>
+        <li><a href="{% url 'displaystudent' %}">show student</a></li>
+        <li><a href="{% url 'displaybook' %}" >show book</a></li>
+               <li><a href="{% url 'updatestudent' %}">update student</a></li>
+        <li><a href="{% url 'updatebook' %}">update book</a></li>
+      <li><a href="{% url 'loginmaster' %}">project</a></li>
+      </ul>
+  <ul class="nav navbar">
+    {% block utility %}
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+  {% endblock %}
+      </ul>
+
+  </div>
+
+</nav>
+ {% endblock %}
+<div class="jumbotron">
+  <div class="row content">
+
+
+    <div class="col-sm-12">
+
+
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+  </div>
+</div>
+{% block footer %}
+<!-- Footer -->
+<footer class="page-footer indigo">
+
+    <!-- Footer Links -->
+    <div class="container position-fixed text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+
+          <!-- Links -->
+
+
+
+        </div>
+        <!-- Grid column -->
+
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+
+
+
+        </div>
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 mx-auto">
+
+
+
+        </div>
+        <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+
+
+        </div>
+
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+
+    <!-- Footer Links -->
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+{% endblock %}
+</body>
+</html>

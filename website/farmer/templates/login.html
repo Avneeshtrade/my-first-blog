@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h1 class="h1 text-center">LOGIN HERE</h1>
+
+                <!-- Grid column -->
+
+                    <div class="card form-white">
+                        <div class="card-body">
+
+                            <form action="." method="post">
+                                {% csrf_token %}
+                                    {{form|crispy}}
+                                <input type="submit" value="Login">
+                            </form>
+
+
+                        </div>
+                    </div>
+
+{% endblock %}
